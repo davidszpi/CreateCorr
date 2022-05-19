@@ -38,6 +38,8 @@ import tkinter.ttk as ttk
 from tkinter.filedialog import asksaveasfilename
 import tkinter.messagebox as msg
 from functools import partial
+import sys as sys
+import os as os
 
 from utils_excel.creation_excel import Option_Feuille_de_Note
 from api.gestion_onglets import Onglets
@@ -45,6 +47,11 @@ from utils.run import run_file
 from afficher_licence import Afficher_licence
 
 from Variables_appli import Variables_appli
+
+
+# Change le répertoire d'exécution au répertoire où est installé le logiciel
+# dans le cas d'un déploiement (pb rencontré sur MacOS)
+os.chdir(sys._MEIPASS)
 
 
 class Appli(tk.Tk):
